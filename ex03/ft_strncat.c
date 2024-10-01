@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bphuyal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 21:56:16 by bphuyal           #+#    #+#             */
-/*   Updated: 2024/09/29 20:57:24 by bphuyal          ###   ########.fr       */
+/*   Created: 2024/09/30 12:41:56 by bphuyal           #+#    #+#             */
+/*   Updated: 2024/09/30 13:39:05 by bphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	while (*s1 == *s2 && *s1)
+	char	*original_dest;
+
+	original_dest = dest;
+
+	while (*dest)
+		dest++;
+	while (0 < nb && *src)
 	{
-		s1++;
-		s2++;
+		*dest = *src;
+		dest++;
+		src++;
+		nb--;
 	}
-	return (*s1 - *s2);
+	*dest = '\0';
+	return(original_dest);
 }
 
 int	main()
 {
-	char s1[] = "hello";
-	char s2[] = "hello";
-	int return_value = ft_strcmp(s1, s2);
-	printf("%s, %s -> %d\n", s1, s2, return_value);
+	char src[] = "Hello";
+	char dest[50] = "World!";
+	ft_strncat(dest, src, 3);
+	printf("%s\n", dest);
 }

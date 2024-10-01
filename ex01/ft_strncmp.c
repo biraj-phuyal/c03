@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bphuyal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 21:56:16 by bphuyal           #+#    #+#             */
-/*   Updated: 2024/09/29 20:57:24 by bphuyal          ###   ########.fr       */
+/*   Created: 2024/09/29 21:34:31 by bphuyal           #+#    #+#             */
+/*   Updated: 2024/09/29 22:45:50 by bphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	ft_strcmp(char *s1, char *s2)
+int ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	while (*s1 == *s2 && *s1)
+	unsigned int	i;
+
+	i = 0;
+	while (i < n && s1[i] != '\0' && s2[i] != '\0')
 	{
-		s1++;
-		s2++;
+		if (s1[i] == s2[i])
+		{
+			return (s1[i] - s2[i]);
+			i++;
+		}
 	}
-	return (*s1 - *s2);
+	if (i != n)
+		return(s1[i] - s2[i]);
+	return (0);
 }
 
-int	main()
+int main()
 {
-	char s1[] = "hello";
-	char s2[] = "hello";
-	int return_value = ft_strcmp(s1, s2);
-	printf("%s, %s -> %d\n", s1, s2, return_value);
+        char s1[] = "hello";
+        char s2[] = "";
+        int return_value = ft_strncmp(s1, s2, 5);
+        printf("%s.. %s -> %d\n", s1, s2, return_value);
+	return 0;
 }
+
