@@ -6,7 +6,7 @@
 /*   By: bphuyal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 19:07:46 by bphuyal           #+#    #+#             */
-/*   Updated: 2024/10/01 12:32:11 by bphuyal          ###   ########.fr       */
+/*   Updated: 2024/10/01 22:39:48 by bphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	while (src[src_len] != '\0')
 		src_len++;
 	if (dest_len >= size)
-		return(src_len + size);
+		return (src_len + size);
 	while (src[i] && dest_len + i + 1 < size)
 	{
 		dest[dest_len + i] = src[i];
@@ -35,7 +35,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	dest[dest_len + i] = '\0';
 	return (dest_len + src_len);
 }
-
+/*
 int	main()
 {
 	char dest[10] = "";
@@ -46,4 +46,4 @@ int	main()
 	printf("Destination = %s\n", dest);
 
 
-}
+}*/

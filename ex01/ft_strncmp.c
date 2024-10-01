@@ -6,13 +6,13 @@
 /*   By: bphuyal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 21:34:31 by bphuyal           #+#    #+#             */
-/*   Updated: 2024/09/29 22:45:50 by bphuyal          ###   ########.fr       */
+/*   Updated: 2024/10/01 22:34:46 by bphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
 
@@ -26,10 +26,10 @@ int ft_strncmp(char *s1, char *s2, unsigned int n)
 		}
 	}
 	if (i != n)
-		return(s1[i] - s2[i]);
+		return (s1[i] - s2[i]);
 	return (0);
 }
-
+/*
 int main()
 {
         char s1[] = "hello";
@@ -38,4 +38,4 @@ int main()
         printf("%s.. %s -> %d\n", s1, s2, return_value);
 	return 0;
 }
-
+*/
