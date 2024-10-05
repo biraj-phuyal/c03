@@ -6,7 +6,7 @@
 /*   By: bphuyal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 11:49:36 by bphuyal           #+#    #+#             */
-/*   Updated: 2024/10/01 22:36:08 by bphuyal          ###   ########.fr       */
+/*   Updated: 2024/10/05 12:01:06 by bphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strcat(char *dest, char *src)
 	original_dest = dest;
 	while (*dest != '\0')
 		dest++;
-	while (*src != '\0')
+	while (*src)
 	{
 		*dest = *src;
 		src++;

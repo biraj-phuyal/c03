@@ -6,7 +6,7 @@
 /*   By: bphuyal <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 12:41:56 by bphuyal           #+#    #+#             */
-/*   Updated: 2024/10/01 22:37:22 by bphuyal          ###   ########.fr       */
+/*   Updated: 2024/10/05 12:03:34 by bphuyal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	original_dest = dest;
 	while (*dest)
 		dest++;
-	while (0 < nb && *src)
+	while (0 < nb-- && *src)
 	{
 		*dest = *src;
 		dest++;
 		src++;
-		nb--;
 	}
 	*dest = '\0';
 	return (original_dest);
